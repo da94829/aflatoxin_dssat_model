@@ -10,7 +10,7 @@ library(patchwork)
 library(readr)
 
 # Load AfConc simulated data
-dssat_data <- read_csv("Dssat_simulation_20241122.csv")
+dssat_data <- read_csv("Dssat_simulation_original_AfConc.csv")
 
 # Cleaning and modifying data
 final_data <- dssat_data %>%
@@ -378,7 +378,7 @@ figure6 <- ggplot(combined, aes(x = as.factor(year),
   geom_boxplot(alpha = 0.7, outlier.alpha = 0.5) +
   scale_y_log10() +
   labs(x = "",
-       y = "Aflatoxin concentration (μg/kg, ppb)") +
+       y = "Aflatoxin concentration (Î¼g/kg, ppb)") +
   scale_fill_brewer(palette = "Set3") + 
   #scale_y_continuous(labels = function(x) 10^x ) + 
   #scale_y_continuous(trans = 'log10',limits = c(0.1, 1000)) +  # Apply log scale with custom breaks and limits starting from 0.1
@@ -478,7 +478,7 @@ figure7data <- rbind(combined_results_long, results_selected)
 
 figure7 <- ggplot(figure7data, aes(x = factor(year), y = value, fill = metric)) +
   geom_boxplot() +
-  labs(x = "Year", y = "Aflatoxin concentration (μg/kg, ppb)") +
+  labs(x = "Year", y = "Aflatoxin concentration (Î¼g/kg, ppb)") +
   scale_fill_brewer(labels = c("Simulated (Resampled)", "Observed"), palette = "Set3") + 
   theme_bw() +
   theme(
@@ -537,7 +537,7 @@ water_year <- ggplot(q, aes(x = total_water_difference, y = AFCON, color = as.fa
     #title = "Relationship Between Total Water Difference and Aflatoxin Concentration",
     #subtitle = "Data grouped by soil type",
     x = "Total Water Difference (mm)",
-    y = "Simulated Aflatoxin Concentration (��g/kg, ppb)",
+    y = "Simulated Aflatoxin Concentration (¥ìg/kg, ppb)",
     color = "Crop Year"
   ) +
   theme_bw() +  
@@ -568,7 +568,7 @@ water_soil <- ggplot(q, aes(x = total_water_difference, y = AFCON, color = soil)
     #title = "Relationship Between Total Water Difference and Aflatoxin Concentration",
     #subtitle = "Data grouped by soil type",
     x = "Total Water Difference (mm)",
-    y = "Simulated Aflatoxin Concentration (��g/kg, ppb)",
+    y = "Simulated Aflatoxin Concentration (¥ìg/kg, ppb)",
     color = "Soil Type"
   ) +
   theme_bw() +  
@@ -596,7 +596,7 @@ water_planting <- ggplot(q, aes(x = total_water_difference, y = AFCON, color = p
     #title = "Relationship Between Total Water Difference and Aflatoxin Concentration",
     #subtitle = "Data grouped by soil type",
     x = "Total Water Difference (mm)",
-    y = "Simulated Aflatoxin Concentration (��g/kg, ppb)",
+    y = "Simulated Aflatoxin Concentration (¥ìg/kg, ppb)",
     color = "Planting Date"
   ) +
   theme_bw() +  
