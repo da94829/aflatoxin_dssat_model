@@ -65,4 +65,4 @@ Tifton <- do.call(rbind, lapply(list.files(path = path,
 
 data <- rbind(Dothan, Fuquay, Pelhem, Leefield, Tifton)
 
-write_csv(data, "Dssat_simulation_20241122.csv")
+write_csv(data, "Dssat_simulation_original_AfConc.csv")
