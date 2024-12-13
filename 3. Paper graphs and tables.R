@@ -151,7 +151,7 @@ ggsave("paper_figure2_different_sowingdate.png", plot = sowingdate,
 
 # Load SoilWat simulated data
 
-data_soil <- read_csv("Dssat_simulation_water_20241122.csv")
+data_soil <- read_csv("Dssat_simulation_original_SoilWat.csv")
 
 data_soil <- data_soil %>%
   separate(EXPERIMENT, into = c("Year", "station"), sep = "_") %>% 
