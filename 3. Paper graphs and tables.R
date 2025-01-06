@@ -69,7 +69,7 @@ table2 <- ggplot(final_data, aes(x = treatment, y = log10(AFCON + 1))) +
   geom_boxplot() +
   scale_y_continuous(labels = function(x) 10^x) + 
   labs(x = "Irrigation Treatment",
-       y = "Simulated Aflatoxin Concentration (??g/kg, ppb)") +
+       y = "Simulated Aflatoxin Concentration (µg/kg, ppb)") +
   theme_bw() +
   theme(axis.title = element_text(family = "Arial",  size = 12),
         axis.text.y = element_text(family = "Arial", size = 12),
@@ -87,7 +87,7 @@ soil <- ggplot(final_data, aes(x = treatment, y = log10(AFCON + 1), fill = soil)
   # Setting y-axis labels to show the original AFCON values
   scale_y_continuous(labels = function(x) 10^x ) + 
   labs(x = "Irrigation Treatment",
-       y = "Simulated aflatoxin concentration (??g/kg, ppb)") +
+       y = "Simulated aflatoxin concentration (µg/kg, ppb)") +
   theme_classic() +
   theme(legend.position = "bottom",
         axis.title = element_text(family = "Arial", size = 12),
@@ -130,7 +130,7 @@ sowingdate <- ggplot(yearly_data, aes(y = year, x = mean_AFCON, fill = planting_
   #geom_bar(stat = "identity", position = position_dodge(width = 0.8),color = "black") +
   facet_wrap(~ irrigation, scales = "free_x", ncol = 2) + # Rainfed on the left, Irrigated on the right
   labs(y = "Year",
-       x = "Simulated Mean Aflatoxin Concentration (??g/kg, ppb)",
+       x = "Simulated Mean Aflatoxin Concentration (µg/kg, ppb)",
        fill = "Planting Date") +
   #scale_fill_manual(values = c("May 5" = "#8dd3c7", "May 12" = "#ffffb3", "May 19" = "#bebada", "May 26" = "#fb8072"),
   #                  breaks = c("May 5", "May 12", "May 19", "May 26")) +
@@ -378,7 +378,7 @@ figure6 <- ggplot(combined, aes(x = as.factor(year),
   geom_boxplot(alpha = 0.7, outlier.alpha = 0.5) +
   scale_y_log10() +
   labs(x = "",
-       y = "Aflatoxin concentration (Î¼g/kg, ppb)") +
+       y = "Aflatoxin concentration (µg/kg, ppb)") +
   scale_fill_brewer(palette = "Set3") + 
   #scale_y_continuous(labels = function(x) 10^x ) + 
   #scale_y_continuous(trans = 'log10',limits = c(0.1, 1000)) +  # Apply log scale with custom breaks and limits starting from 0.1
@@ -478,7 +478,7 @@ figure7data <- rbind(combined_results_long, results_selected)
 
 figure7 <- ggplot(figure7data, aes(x = factor(year), y = value, fill = metric)) +
   geom_boxplot() +
-  labs(x = "Year", y = "Aflatoxin concentration (Î¼g/kg, ppb)") +
+  labs(x = "Year", y = "Aflatoxin concentration (µg/kg, ppb)") +
   scale_fill_brewer(labels = c("Simulated (Resampled)", "Observed"), palette = "Set3") + 
   theme_bw() +
   theme(
@@ -537,7 +537,7 @@ water_year <- ggplot(q, aes(x = total_water_difference, y = AFCON, color = as.fa
     #title = "Relationship Between Total Water Difference and Aflatoxin Concentration",
     #subtitle = "Data grouped by soil type",
     x = "Total Water Difference (mm)",
-    y = "Simulated Aflatoxin Concentration (¥ìg/kg, ppb)",
+    y = "Simulated Aflatoxin Concentration (µg/kg, ppb)",
     color = "Crop Year"
   ) +
   theme_bw() +  
@@ -596,7 +596,7 @@ water_planting <- ggplot(q, aes(x = total_water_difference, y = AFCON, color = p
     #title = "Relationship Between Total Water Difference and Aflatoxin Concentration",
     #subtitle = "Data grouped by soil type",
     x = "Total Water Difference (mm)",
-    y = "Simulated Aflatoxin Concentration (¥ìg/kg, ppb)",
+    y = "Simulated Aflatoxin Concentration (µg/kg, ppb)",
     color = "Planting Date"
   ) +
   theme_bw() +  
